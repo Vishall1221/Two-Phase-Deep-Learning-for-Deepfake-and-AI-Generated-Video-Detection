@@ -1,0 +1,124 @@
+{
+  "run_a": "C:\\Users\\jaira\\Desktop\\Project\\artifacts\\merged_generalized_deepfake_1500\\training_runs\\xception_1776369649",
+  "run_b": "C:\\Users\\jaira\\Desktop\\Project\\artifacts\\merged_generalized_deepfake_1500\\training_runs\\efficientnet_b2_1776402608",
+  "weight_run_a": 0.45,
+  "weight_run_b": 0.55,
+  "validation_metrics": {
+    "video_accuracy": 0.9622222222222222,
+    "video_f1": 0.9621380846325167,
+    "video_auc": 0.9934222222222222,
+    "confusion_matrix": [
+      [
+        217,
+        8
+      ],
+      [
+        9,
+        216
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.9601769911504425,
+        "recall": 0.9644444444444444,
+        "f1-score": 0.9623059866962306,
+        "support": 225.0
+      },
+      "1": {
+        "precision": 0.9642857142857143,
+        "recall": 0.96,
+        "f1-score": 0.9621380846325167,
+        "support": 225.0
+      },
+      "accuracy": 0.9622222222222222,
+      "macro avg": {
+        "precision": 0.9622313527180784,
+        "recall": 0.9622222222222222,
+        "f1-score": 0.9622220356643736,
+        "support": 450.0
+      },
+      "weighted avg": {
+        "precision": 0.9622313527180785,
+        "recall": 0.9622222222222222,
+        "f1-score": 0.9622220356643735,
+        "support": 450.0
+      }
+    },
+    "source_metrics": {
+      "CelebDF": {
+        "count": 159,
+        "accuracy": 0.9622641509433962,
+        "auc": 0.9890476190476191
+      },
+      "DFDC": {
+        "count": 130,
+        "accuracy": 0.9230769230769231,
+        "auc": 0.9818181818181818
+      },
+      "FaceForensics": {
+        "count": 161,
+        "accuracy": 0.9937888198757764,
+        "auc": 1.0
+      }
+    }
+  },
+  "test_metrics": {
+    "video_accuracy": 0.9666666666666667,
+    "video_f1": 0.9664429530201343,
+    "video_auc": 0.9953975308641975,
+    "confusion_matrix": [
+      [
+        219,
+        6
+      ],
+      [
+        9,
+        216
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.9605263157894737,
+        "recall": 0.9733333333333334,
+        "f1-score": 0.9668874172185431,
+        "support": 225.0
+      },
+      "1": {
+        "precision": 0.972972972972973,
+        "recall": 0.96,
+        "f1-score": 0.9664429530201343,
+        "support": 225.0
+      },
+      "accuracy": 0.9666666666666667,
+      "macro avg": {
+        "precision": 0.9667496443812233,
+        "recall": 0.9666666666666667,
+        "f1-score": 0.9666651851193386,
+        "support": 450.0
+      },
+      "weighted avg": {
+        "precision": 0.9667496443812233,
+        "recall": 0.9666666666666667,
+        "f1-score": 0.9666651851193387,
+        "support": 450.0
+      }
+    },
+    "source_metrics": {
+      "CelebDF": {
+        "count": 160,
+        "accuracy": 0.96875,
+        "auc": 0.995921568627451
+      },
+      "DFDC": {
+        "count": 130,
+        "accuracy": 0.9230769230769231,
+        "auc": 0.9743030303030302
+      },
+      "FaceForensics": {
+        "count": 160,
+        "accuracy": 1.0,
+        "auc": 1.0
+      }
+    }
+  }
+}

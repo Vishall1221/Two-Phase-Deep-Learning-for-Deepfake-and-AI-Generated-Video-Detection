@@ -1,0 +1,2 @@
+model_name,best_epoch,validation_video_accuracy,validation_video_f1,validation_video_auc,test_video_accuracy,test_video_f1,test_video_auc,test_frame_accuracy,test_frame_f1,test_frame_auc
+xception,1,0.951111,0.951111,0.986351,0.955556,0.955752,0.991763,0.929471,0.929167,0.984200

@@ -1,0 +1,2 @@
+model_name,best_epoch,validation_video_accuracy,validation_video_f1,validation_video_auc,test_video_accuracy,test_video_f1,test_video_auc,test_frame_accuracy,test_frame_f1,test_frame_auc
+efficientnet_b2,3,0.946667,0.946188,0.988010,0.940000,0.937644,0.990598,0.929471,0.926679,0.981727

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project UI</title>
+    <style>
+        :root {
+            --bg: #eef3fb;
+            --card: #ffffff;
+            --text: #10223d;
+            --muted: #5c6f8f;
+            --blue: #1f5eff;
+            --teal: #0fa7a0;
+            --pink: #d64574;
+            --border: #dfe6f3;
+            --shadow: 0 18px 44px rgba(16, 34, 61, 0.10);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(31, 94, 255, 0.10), transparent 26%),
+                linear-gradient(180deg, #f5f8fd 0%, var(--bg) 100%);
+            color: var(--text);
+        }
+        .wrap {
+            max-width: 1180px;
+            margin: 28px auto;
+            padding: 0 18px 40px;
+        }
+        .hero, .panel, .section, .result-card, .note-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+        }
+        .hero {
+            padding: 28px 30px;
+            margin-bottom: 18px;
+        }
+        .hero h1 {
+            margin: 0 0 12px;
+            font-size: 2.1rem;
+        }
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 900px;
+        }
+        .panel {
+            padding: 22px 24px;
+            margin-bottom: 18px;
+        }
+        .panel h2, .section h2 {
+            margin-top: 0;
+        }
+        .upload-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 18px;
+        }
+        .how-list {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+        input[type=file] {
+            width: 100%;
+            margin: 12px 0 18px;
+            padding: 14px;
+            border-radius: 14px;
+            border: 1px dashed #bfd0f0;
+            background: #f8fbff;
+        }
+        button {
+            background: linear-gradient(135deg, var(--blue), #3657d6);
+            color: white;
+            border: 0;
+            padding: 13px 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.98rem;
+        }
+        .error {
+            margin-top: 16px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            background: #fff1f3;
+            color: #9f1f3e;
+            border: 1px solid #ffd5df;
+        }
+        .result-card {
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            border-left: 7px solid var(--blue);
+        }
+        .pill {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #eaf0ff;
+            color: #24449e;
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .big-label {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 4px 0 10px;
+        }
+        .muted {
+            color: var(--muted);
+        }
+        .section {
+            padding: 22px 24px;
+            margin-bottom: 18px;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .metric {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 14px 16px;
+            background: #fbfdff;
+        }
+        .metric .label {
+            color: var(--muted);
+            font-size: 0.86rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .metric .value {
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+        .prob-bars {
+            margin: 8px 0 18px;
+            display: grid;
+            gap: 12px;
+        }
+        .prob-row {
+            display: grid;
+            grid-template-columns: 170px 1fr 90px;
+            align-items: center;
+            gap: 12px;
+        }
+        .prob-row .name {
+            font-weight: 600;
+        }
+        .bar-track {
+            height: 14px;
+            border-radius: 999px;
+            background: #ebf0f7;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--blue), var(--teal));
+        }
+        .bar-fill.pink {
+            background: linear-gradient(90deg, #f06a91, var(--pink));
+        }
+        .chart {
+            margin: 16px 0 18px;
+        }
+        .chart img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            display: block;
+            background: white;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 14px;
+            background: #fbfdff;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #d8e1ef;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .small {
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .note-card {
+            padding: 18px 20px;
+            background: #f4fbfa;
+            border-color: #d6efec;
+            color: #1d5a56;
+        }
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 20, 34, 0.72);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        .loading-overlay.active {
+            display: flex;
+        }
+        .loading-card {
+            width: min(520px, 92vw);
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: 0 28px 60px rgba(16, 34, 61, 0.20);
+            padding: 28px 26px 24px;
+            text-align: center;
+        }
+        .loading-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.45rem;
+        }
+        .loading-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+        .loading-track {
+            width: 100%;
+            height: 14px;
+            background: #e7edf8;
+            border-radius: 999px;
+            overflow: hidden;
+            margin: 20px 0 14px;
+        }
+        .loading-fill {
+            width: 42%;
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--blue), var(--teal));
+            animation: progress-slide 1.35s ease-in-out infinite;
+            transform-origin: left center;
+        }
+        .loading-stage {
+            min-height: 24px;
+            font-weight: 600;
+            color: #24449e;
+        }
+        button[disabled] {
+            cursor: not-allowed;
+            opacity: 0.84;
+        }
+        @keyframes progress-slide {
+            0% {
+                transform: translateX(-115%) scaleX(0.9);
+            }
+            50% {
+                transform: translateX(85%) scaleX(1.05);
+            }
+            100% {
+                transform: translateX(245%) scaleX(0.9);
+            }
+        }
+        @media (max-width: 900px) {
+            .upload-grid {
+                grid-template-columns: 1fr;
+            }
+            .prob-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="hero">
+            <h1>Final Project UI</h1>
+            <p>
+                Upload a video to run the two-stage pipeline. Phase 1 checks whether the content is
+                AI-generated or camera-captured. If the video is camera-captured, Phase 2 continues
+                and predicts whether it is real or deepfake.
+            </p>
+        </div>
+
+        <div class="panel upload-grid">
+            <div>
+                <h2>Upload Video</h2>
+                <form id="predict-form" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="video" accept="video/*" required>
+                    <br>
+                    <button id="predict-submit" type="submit">Upload and Predict</button>
+                </form>
+                {% if error %}
+                    <div class="error"><strong>Error:</strong> {{ error }}</div>
+                {% endif %}
+            </div>
+            <div>
+                <h2>Pipeline</h2>
+                <ol class="how-list">
+                    <li>Sample evenly spaced frames from the uploaded video.</li>
+                    <li>Phase 1 computes residual and FFT features for AI vs camera classification.</li>
+                    <li>If Phase 1 predicts camera-captured, Phase 2 extracts face crops and runs the ensemble.</li>
+                    <li>The final output becomes one of: <strong>AI Generated</strong>, <strong>Real</strong>, or <strong>Deepfake</strong>.</li>
+                </ol>
+            </div>
+        </div>
+
+        {% if result %}
+            <div class="result-card">
+                <div class="pill">Final Decision</div>
+                <div class="big-label">{{ result.final_label }}</div>
+                <div class="small"><strong>Confidence:</strong> {{ result.final_confidence }}</div>
+                <p class="muted" style="margin-bottom: 0;">{{ result.pipeline_note }}</p>
+            </div>
+
+            <div class="section">
+                <h2>Phase 1: AI Generated vs Camera Captured</h2>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="label">Phase 1 Prediction</div>
+                        <div class="value">{{ result.phase1.prediction_label }}</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Confidence</div>
+                        <div class="value">{{ result.phase1.confidence }}</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Frames Used</div>
+                        <div class="value">{{ result.phase1.frames_used }}</div>
+                    </div>
+                </div>
+
+                <div class="prob-bars">
+                    <div class="prob-row">
+                        <div class="name">AI Generated</div>
+                        <div class="bar-track"><div class="bar-fill pink" style="width: {{ result.phase1.avg_prob_ai * 100 }}%;"></div></div>
+                        <div>{{ (result.phase1.avg_prob_ai * 100) | round(2) }}%</div>
+                    </div>
+                    <div class="prob-row">
+                        <div class="name">Camera Captured</div>
+                        <div class="bar-track"><div class="bar-fill" style="width: {{ result.phase1.avg_prob_camera * 100 }}%;"></div></div>
+                        <div>{{ (result.phase1.avg_prob_camera * 100) | round(2) }}%</div>
+                    </div>
+                </div>
+
+                {% if result.phase1.previews %}
+                    <div class="grid">
+                        {% for item in result.phase1.previews %}
+                            <div class="card">
+                                <h3>Sample {{ item.index }}</h3>
+                                <div class="small"><strong>Original Frame Index:</strong> {{ item.frame_index }}</div>
+                                <div class="small"><strong>Frame Prediction:</strong> {{ item.frame_pred }}</div>
+                                <div class="small"><strong>AI Probability:</strong> {{ item.frame_prob_ai }}</div>
+                                <div class="small"><strong>Camera Probability:</strong> {{ item.frame_prob_camera }}</div>
+                                <p class="small"><strong>Original</strong></p>
+                                <img src="{{ item.orig }}" alt="Original frame">
+                                <p class="small"><strong>Residual</strong></p>
+                                <img src="{{ item.residual }}" alt="Residual image">
+                                <p class="small"><strong>FFT</strong></p>
+                                <img src="{{ item.fft }}" alt="FFT image">
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if result.phase2 %}
+                <div class="section">
+                    <h2>Phase 2: Real vs Deepfake</h2>
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="label">Phase 2 Prediction</div>
+                            <div class="value">{{ result.phase2.prediction_label }}</div>
+                        </div>
+                        <div class="metric">
+                            <div class="label">Confidence</div>
+                            <div class="value">{{ result.phase2.confidence }}</div>
+                        </div>
+                        <div class="metric">
+                            <div class="label">Ensemble Fake Probability</div>
+                            <div class="value">{{ result.phase2.ensemble_probability }}</div>
+                        </div>
+                    </div>
+
+                    <div class="prob-bars">
+                        <div class="prob-row">
+                            <div class="name">Xception</div>
+                            <div class="bar-track"><div class="bar-fill" style="width: {{ result.phase2.xception_probability * 100 }}%;"></div></div>
+                            <div>{{ (result.phase2.xception_probability * 100) | round(2) }}%</div>
+                        </div>
+                        <div class="prob-row">
+                            <div class="name">EfficientNet-B2</div>
+                            <div class="bar-track"><div class="bar-fill" style="width: {{ result.phase2.efficientnet_b2_probability * 100 }}%;"></div></div>
+                            <div>{{ (result.phase2.efficientnet_b2_probability * 100) | round(2) }}%</div>
+                        </div>
+                        <div class="prob-row">
+                            <div class="name">Ensemble</div>
+                            <div class="bar-track"><div class="bar-fill pink" style="width: {{ result.phase2.ensemble_probability * 100 }}%;"></div></div>
+                            <div>{{ (result.phase2.ensemble_probability * 100) | round(2) }}%</div>
+                        </div>
+                    </div>
+
+                    {% if result.phase2.face_previews %}
+                        <div class="grid">
+                            {% for item in result.phase2.face_previews %}
+                                <div class="card">
+                                    <h3>Face Preview {{ item.index }}</h3>
+                                    <div class="small"><strong>Selected Face Number:</strong> {{ item.face_number }}</div>
+                                    <div class="small"><strong>Source Frame Index:</strong> {{ item.frame_index }}</div>
+                                    <img src="{{ item.image }}" alt="Phase 2 face preview">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% else %}
+                <div class="note-card">
+                    Phase 2 was skipped because Phase 1 classified the video as AI-generated / non-camera content.
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="loading-card">
+            <h3>Processing Your Video</h3>
+            <p>Please wait while the system analyzes the upload and prepares the result.</p>
+            <div class="loading-track">
+                <div class="loading-fill"></div>
+            </div>
+            <div id="loading-stage" class="loading-stage">Uploading video...</div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const form = document.getElementById("predict-form");
+            const overlay = document.getElementById("loading-overlay");
+            const submitBtn = document.getElementById("predict-submit");
+            const stage = document.getElementById("loading-stage");
+            if (!form || !overlay || !submitBtn || !stage) {
+                return;
+            }
+
+            const steps = [
+                "Uploading video...",
+                "Running Phase 1 analysis...",
+                "Running Phase 2 if needed...",
+                "Preparing the result..."
+            ];
+
+            let stepIndex = 0;
+            let stepTimer = null;
+
+            function startLoadingSequence() {
+                overlay.classList.add("active");
+                overlay.setAttribute("aria-hidden", "false");
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Processing...";
+                stage.textContent = steps[0];
+
+                stepTimer = window.setInterval(() => {
+                    stepIndex = (stepIndex + 1) % steps.length;
+                    stage.textContent = steps[stepIndex];
+                }, 3000);
+            }
+
+            form.addEventListener("submit", function () {
+                startLoadingSequence();
+            });
+
+            window.addEventListener("pageshow", function () {
+                if (stepTimer) {
+                    window.clearInterval(stepTimer);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

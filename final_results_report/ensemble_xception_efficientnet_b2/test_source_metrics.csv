@@ -1,0 +1,4 @@
+source_dataset,count,accuracy,auc
+CelebDF,160,0.96875,0.995921568627451
+DFDC,130,0.9230769230769231,0.9743030303030302
+FaceForensics,160,1.0,1.0

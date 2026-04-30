@@ -1,0 +1,4 @@
+source_dataset,count,accuracy
+CelebDF,160,0.93125
+DFDC,130,0.8769230769230769
+FaceForensics,160,1.0

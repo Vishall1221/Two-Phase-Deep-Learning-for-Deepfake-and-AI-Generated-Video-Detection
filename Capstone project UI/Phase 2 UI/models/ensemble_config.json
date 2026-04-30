@@ -1,0 +1,15 @@
+{
+  "ensemble_name": "xception_efficientnet_b2_best",
+  "validation_video_accuracy": 0.9622222222222222,
+  "test_video_accuracy": 0.9666666666666667,
+  "models": [
+    {
+      "checkpoint": "models/xception_best_model.pth",
+      "weight": 0.45
+    },
+    {
+      "checkpoint": "models/efficientnet_b2_best_model.pth",
+      "weight": 0.55
+    }
+  ]
+}

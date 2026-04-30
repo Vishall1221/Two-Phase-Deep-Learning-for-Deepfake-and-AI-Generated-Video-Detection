@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+
+Datasets/
+artifacts/
+frontend_runtime/
+generalized_xception_source_invariant/
+
+**/runtime/
+**/runtime_logs/
+**/uploads/
+**/predictions/
+**/server_logs/
+**/static/previews/
+
+Capstone project UI/testing Videos/

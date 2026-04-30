@@ -1,0 +1,2 @@
+run_a,run_b,weight_run_a,weight_run_b,validation_video_accuracy,validation_video_auc,test_video_accuracy,test_video_auc
+xception_1776369649,efficientnet_b2_1776402608,0.45,0.55,0.962222,0.993422,0.966667,0.995398

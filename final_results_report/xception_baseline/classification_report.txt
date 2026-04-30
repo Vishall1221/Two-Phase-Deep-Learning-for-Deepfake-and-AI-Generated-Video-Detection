@@ -1,0 +1,57 @@
+Validation Classification Report
+{
+  "0": {
+    "precision": 0.9511111111111111,
+    "recall": 0.9511111111111111,
+    "f1-score": 0.9511111111111111,
+    "support": 225.0
+  },
+  "1": {
+    "precision": 0.9511111111111111,
+    "recall": 0.9511111111111111,
+    "f1-score": 0.9511111111111111,
+    "support": 225.0
+  },
+  "accuracy": 0.9511111111111111,
+  "macro avg": {
+    "precision": 0.9511111111111111,
+    "recall": 0.9511111111111111,
+    "f1-score": 0.9511111111111111,
+    "support": 450.0
+  },
+  "weighted avg": {
+    "precision": 0.9511111111111111,
+    "recall": 0.9511111111111111,
+    "f1-score": 0.9511111111111111,
+    "support": 450.0
+  }
+}
+
+Test Classification Report
+{
+  "0": {
+    "precision": 0.9596412556053812,
+    "recall": 0.9511111111111111,
+    "f1-score": 0.9553571428571429,
+    "support": 225.0
+  },
+  "1": {
+    "precision": 0.9515418502202643,
+    "recall": 0.96,
+    "f1-score": 0.9557522123893806,
+    "support": 225.0
+  },
+  "accuracy": 0.9555555555555556,
+  "macro avg": {
+    "precision": 0.9555915529128227,
+    "recall": 0.9555555555555555,
+    "f1-score": 0.9555546776232617,
+    "support": 450.0
+  },
+  "weighted avg": {
+    "precision": 0.9555915529128227,
+    "recall": 0.9555555555555556,
+    "f1-score": 0.9555546776232617,
+    "support": 450.0
+  }
+}

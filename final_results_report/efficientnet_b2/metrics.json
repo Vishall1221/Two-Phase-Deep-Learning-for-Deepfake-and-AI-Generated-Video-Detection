@@ -1,0 +1,631 @@
+{
+  "model_name": "efficientnet_b2",
+  "best_epoch": 3,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.377597930681281,
+      "train_accuracy": 0.8761904761904762,
+      "frame_accuracy": 0.8888394842152068,
+      "frame_f1": 0.882186616399623,
+      "frame_auc": 0.9674306928518078,
+      "video_accuracy": 0.9111111111111111,
+      "video_f1": 0.9065420560747663,
+      "video_auc": 0.9814518518518519,
+      "confusion_matrix": [
+        [
+          216,
+          9
+        ],
+        [
+          31,
+          194
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.8744939271255061,
+          "recall": 0.96,
+          "f1-score": 0.9152542372881356,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9556650246305419,
+          "recall": 0.8622222222222222,
+          "f1-score": 0.9065420560747663,
+          "support": 225.0
+        },
+        "accuracy": 0.9111111111111111,
+        "macro avg": {
+          "precision": 0.9150794758780241,
+          "recall": 0.9111111111111111,
+          "f1-score": 0.910898146681451,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9150794758780241,
+          "recall": 0.9111111111111111,
+          "f1-score": 0.910898146681451,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.8742138364779874
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.8692307692307693
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9813664596273292
+        }
+      },
+      "learning_rate": 0.00019785846487191297
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.14038268289032266,
+      "train_accuracy": 0.9461269841269841,
+      "frame_accuracy": 0.9107751593300726,
+      "frame_f1": 0.9145129224652088,
+      "frame_auc": 0.9795601247748342,
+      "video_accuracy": 0.9222222222222223,
+      "video_f1": 0.9253731343283582,
+      "video_auc": 0.98799012345679,
+      "confusion_matrix": [
+        [
+          198,
+          27
+        ],
+        [
+          8,
+          217
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9611650485436893,
+          "recall": 0.88,
+          "f1-score": 0.9187935034802784,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.889344262295082,
+          "recall": 0.9644444444444444,
+          "f1-score": 0.9253731343283582,
+          "support": 225.0
+        },
+        "accuracy": 0.9222222222222223,
+        "macro avg": {
+          "precision": 0.9252546554193857,
+          "recall": 0.9222222222222223,
+          "f1-score": 0.9220833189043183,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9252546554193857,
+          "recall": 0.9222222222222223,
+          "f1-score": 0.9220833189043184,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.8805031446540881
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.8846153846153846
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9937888198757764
+        }
+      },
+      "learning_rate": 0.00019152745484897487
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.09616903011374026,
+      "train_accuracy": 0.9628571428571429,
+      "frame_accuracy": 0.9270787016451756,
+      "frame_f1": 0.9264354066985646,
+      "frame_auc": 0.980466455779623,
+      "video_accuracy": 0.9466666666666667,
+      "video_f1": 0.9461883408071748,
+      "video_auc": 0.9880098765432099,
+      "confusion_matrix": [
+        [
+          215,
+          10
+        ],
+        [
+          14,
+          211
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9388646288209607,
+          "recall": 0.9555555555555556,
+          "f1-score": 0.947136563876652,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9547511312217195,
+          "recall": 0.9377777777777778,
+          "f1-score": 0.9461883408071748,
+          "support": 225.0
+        },
+        "accuracy": 0.9466666666666667,
+        "macro avg": {
+          "precision": 0.9468078800213401,
+          "recall": 0.9466666666666668,
+          "f1-score": 0.9466624523419134,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.94680788002134,
+          "recall": 0.9466666666666667,
+          "f1-score": 0.9466624523419134,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.9245283018867925
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.9153846153846154
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9937888198757764
+        }
+      },
+      "learning_rate": 0.00018128366544874485
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.07183909957673741,
+      "train_accuracy": 0.9733650793650793,
+      "frame_accuracy": 0.9106269453090262,
+      "frame_f1": 0.9128234783865837,
+      "frame_auc": 0.9765200123017442,
+      "video_accuracy": 0.9244444444444444,
+      "video_f1": 0.9264069264069265,
+      "video_auc": 0.9839407407407408,
+      "confusion_matrix": [
+        [
+          202,
+          23
+        ],
+        [
+          11,
+          214
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9483568075117371,
+          "recall": 0.8977777777777778,
+          "f1-score": 0.9223744292237442,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9029535864978903,
+          "recall": 0.9511111111111111,
+          "f1-score": 0.9264069264069265,
+          "support": 225.0
+        },
+        "accuracy": 0.9244444444444444,
+        "macro avg": {
+          "precision": 0.9256551970048137,
+          "recall": 0.9244444444444444,
+          "f1-score": 0.9243906778153353,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9256551970048137,
+          "recall": 0.9244444444444444,
+          "f1-score": 0.9243906778153353,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.9245283018867925
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.8384615384615385
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9937888198757764
+        }
+      },
+      "learning_rate": 0.0001675747994231681
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.05489284899037519,
+      "train_accuracy": 0.9778095238095238,
+      "frame_accuracy": 0.9254483474136653,
+      "frame_f1": 0.9258877265360248,
+      "frame_auc": 0.9812567549756162,
+      "video_accuracy": 0.94,
+      "video_f1": 0.9409190371991247,
+      "video_auc": 0.9897283950617284,
+      "confusion_matrix": [
+        [
+          208,
+          17
+        ],
+        [
+          10,
+          215
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9541284403669725,
+          "recall": 0.9244444444444444,
+          "f1-score": 0.9390519187358917,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9267241379310345,
+          "recall": 0.9555555555555556,
+          "f1-score": 0.9409190371991247,
+          "support": 225.0
+        },
+        "accuracy": 0.94,
+        "macro avg": {
+          "precision": 0.9404262891490035,
+          "recall": 0.94,
+          "f1-score": 0.9399854779675082,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9404262891490036,
+          "recall": 0.94,
+          "f1-score": 0.9399854779675083,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.9182389937106918
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.9
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9937888198757764
+        }
+      },
+      "learning_rate": 0.000151
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.044825111438632395,
+      "train_accuracy": 0.9820634920634921,
+      "frame_accuracy": 0.9202608566770416,
+      "frame_f1": 0.9206723680330287,
+      "frame_auc": 0.9803287641140548,
+      "video_accuracy": 0.9355555555555556,
+      "video_f1": 0.9362637362637363,
+      "video_auc": 0.9888395061728396,
+      "confusion_matrix": [
+        [
+          208,
+          17
+        ],
+        [
+          12,
+          213
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9454545454545454,
+          "recall": 0.9244444444444444,
+          "f1-score": 0.9348314606741573,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9260869565217391,
+          "recall": 0.9466666666666667,
+          "f1-score": 0.9362637362637363,
+          "support": 225.0
+        },
+        "accuracy": 0.9355555555555556,
+        "macro avg": {
+          "precision": 0.9357707509881423,
+          "recall": 0.9355555555555555,
+          "f1-score": 0.9355475984689468,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9357707509881422,
+          "recall": 0.9355555555555556,
+          "f1-score": 0.9355475984689469,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.9371069182389937
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.8692307692307693
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9875776397515528
+        }
+      },
+      "learning_rate": 0.00013228366544874488
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.035093424660521066,
+      "train_accuracy": 0.9853968253968254,
+      "frame_accuracy": 0.9224840669927376,
+      "frame_f1": 0.9241039036424321,
+      "frame_auc": 0.981283027986468,
+      "video_accuracy": 0.9355555555555556,
+      "video_f1": 0.9370932754880694,
+      "video_auc": 0.9883851851851853,
+      "confusion_matrix": [
+        [
+          205,
+          20
+        ],
+        [
+          9,
+          216
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9579439252336449,
+          "recall": 0.9111111111111111,
+          "f1-score": 0.9339407744874715,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9152542372881356,
+          "recall": 0.96,
+          "f1-score": 0.9370932754880694,
+          "support": 225.0
+        },
+        "accuracy": 0.9355555555555556,
+        "macro avg": {
+          "precision": 0.9365990812608902,
+          "recall": 0.9355555555555555,
+          "f1-score": 0.9355170249877705,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9365990812608902,
+          "recall": 0.9355555555555556,
+          "f1-score": 0.9355170249877706,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.9308176100628931
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.8692307692307693
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9937888198757764
+        }
+      },
+      "learning_rate": 0.00011224378940023008
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.030968980222892056,
+      "train_accuracy": 0.9866031746031746,
+      "frame_accuracy": 0.9137394397510005,
+      "frame_f1": 0.9138543516873889,
+      "frame_auc": 0.9728018540485919,
+      "video_accuracy": 0.9288888888888889,
+      "video_f1": 0.9288888888888889,
+      "video_auc": 0.9803851851851852,
+      "confusion_matrix": [
+        [
+          209,
+          16
+        ],
+        [
+          16,
+          209
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9288888888888889,
+          "recall": 0.9288888888888889,
+          "f1-score": 0.9288888888888889,
+          "support": 225.0
+        },
+        "1": {
+          "precision": 0.9288888888888889,
+          "recall": 0.9288888888888889,
+          "f1-score": 0.9288888888888889,
+          "support": 225.0
+        },
+        "accuracy": 0.9288888888888889,
+        "macro avg": {
+          "precision": 0.9288888888888889,
+          "recall": 0.9288888888888889,
+          "f1-score": 0.9288888888888889,
+          "support": 450.0
+        },
+        "weighted avg": {
+          "precision": 0.9288888888888889,
+          "recall": 0.9288888888888889,
+          "f1-score": 0.9288888888888889,
+          "support": 450.0
+        }
+      },
+      "source_metrics": {
+        "CelebDF": {
+          "count": 159,
+          "accuracy": 0.8867924528301887
+        },
+        "DFDC": {
+          "count": 130,
+          "accuracy": 0.9153846153846154
+        },
+        "FaceForensics": {
+          "count": 161,
+          "accuracy": 0.9813664596273292
+        }
+      },
+      "learning_rate": 9.175621059977001e-05
+    }
+  ],
+  "validation_metrics": {
+    "frame_accuracy": 0.9270787016451756,
+    "frame_f1": 0.9264354066985646,
+    "frame_auc": 0.980466455779623,
+    "video_accuracy": 0.9466666666666667,
+    "video_f1": 0.9461883408071748,
+    "video_auc": 0.9880098765432099,
+    "confusion_matrix": [
+      [
+        215,
+        10
+      ],
+      [
+        14,
+        211
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.9388646288209607,
+        "recall": 0.9555555555555556,
+        "f1-score": 0.947136563876652,
+        "support": 225.0
+      },
+      "1": {
+        "precision": 0.9547511312217195,
+        "recall": 0.9377777777777778,
+        "f1-score": 0.9461883408071748,
+        "support": 225.0
+      },
+      "accuracy": 0.9466666666666667,
+      "macro avg": {
+        "precision": 0.9468078800213401,
+        "recall": 0.9466666666666668,
+        "f1-score": 0.9466624523419134,
+        "support": 450.0
+      },
+      "weighted avg": {
+        "precision": 0.94680788002134,
+        "recall": 0.9466666666666667,
+        "f1-score": 0.9466624523419134,
+        "support": 450.0
+      }
+    },
+    "source_metrics": {
+      "CelebDF": {
+        "count": 159,
+        "accuracy": 0.9245283018867925
+      },
+      "DFDC": {
+        "count": 130,
+        "accuracy": 0.9153846153846154
+      },
+      "FaceForensics": {
+        "count": 161,
+        "accuracy": 0.9937888198757764
+      }
+    }
+  },
+  "test_metrics": {
+    "frame_accuracy": 0.929471032745592,
+    "frame_f1": 0.9266789895255699,
+    "frame_auc": 0.981726711892687,
+    "video_accuracy": 0.94,
+    "video_f1": 0.9376443418013857,
+    "video_auc": 0.9905975308641976,
+    "confusion_matrix": [
+      [
+        220,
+        5
+      ],
+      [
+        22,
+        203
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.9090909090909091,
+        "recall": 0.9777777777777777,
+        "f1-score": 0.9421841541755889,
+        "support": 225.0
+      },
+      "1": {
+        "precision": 0.9759615384615384,
+        "recall": 0.9022222222222223,
+        "f1-score": 0.9376443418013857,
+        "support": 225.0
+      },
+      "accuracy": 0.94,
+      "macro avg": {
+        "precision": 0.9425262237762237,
+        "recall": 0.94,
+        "f1-score": 0.9399142479884872,
+        "support": 450.0
+      },
+      "weighted avg": {
+        "precision": 0.9425262237762237,
+        "recall": 0.94,
+        "f1-score": 0.9399142479884872,
+        "support": 450.0
+      }
+    },
+    "source_metrics": {
+      "CelebDF": {
+        "count": 160,
+        "accuracy": 0.93125
+      },
+      "DFDC": {
+        "count": 130,
+        "accuracy": 0.8769230769230769
+      },
+      "FaceForensics": {
+        "count": 160,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "train_frames": 31500,
+  "val_frames": 6747,
+  "test_frames": 6749
+}

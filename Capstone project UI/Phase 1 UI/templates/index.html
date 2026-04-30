@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phase 1 Video Detector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+        .wrap { max-width: 1000px; margin: 30px auto; background: white; padding: 24px; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        h1 { margin-top: 0; }
+        .muted { color: #666; }
+        .result { margin-top: 20px; padding: 18px; border-radius: 12px; background: #f3f8ff; }
+        .error { margin-top: 20px; padding: 18px; border-radius: 12px; background: #fff1f1; color: #a30000; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+        .card { border: 1px solid #eee; border-radius: 12px; padding: 12px; }
+        img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #ddd; }
+        button { background: #111827; color: white; border: 0; padding: 12px 18px; border-radius: 10px; cursor: pointer; }
+        input[type=file] { margin: 12px 0 18px; }
+        .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #111827; color: white; font-size: 14px; }
+        .metrics { margin-top: 12px; line-height: 1.8; }
+        .small { font-size: 14px; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Phase 1 Video Detector</h1>
+        <p class="muted">Upload a video. The app samples 15 frames, computes residual and FFT for each, runs the paired Residual+FFT model, and returns a video-level prediction by averaging frame probabilities.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="video" accept="video/*" required>
+            <br>
+            <button type="submit">Upload and Predict</button>
+        </form>
+
+        {% if error %}
+            <div class="error"><strong>Error:</strong> {{ error }}</div>
+        {% endif %}
+
+        {% if result %}
+            <div class="result">
+                <div class="pill">Prediction: {{ result.prediction }}</div>
+                <div class="metrics">
+                    <div><strong>Confidence:</strong> {{ result.confidence }}</div>
+                    <div><strong>Average AI Probability:</strong> {{ result.avg_prob_ai }}</div>
+                    <div><strong>Average Camera Probability:</strong> {{ result.avg_prob_camera }}</div>
+                    <div><strong>Frames Used:</strong> {{ result.frames_used }}</div>
+                    <div><strong>Frame Camera Probabilities:</strong> {{ result.frame_probs_camera }}</div>
+                </div>
+            </div>
+
+            {% if result.previews %}
+                <h2 style="margin-top: 24px;">Sample Processed Frames</h2>
+                <p class="small">Below are the first few sampled frames with their residual and FFT images.</p>
+                <div class="grid">
+                    {% for item in result.previews %}
+                        <div class="card">
+                            <h3>Sample {{ item.index }}</h3>
+                            <div class="small"><strong>Frame Prediction:</strong> {{ item.frame_pred }}</div>
+                            <div class="small"><strong>AI Prob:</strong> {{ item.frame_prob_ai }}</div>
+                            <div class="small"><strong>Camera Prob:</strong> {{ item.frame_prob_camera }}</div>
+                            <p class="small"><strong>Original</strong></p>
+                            <img src="{{ item.orig }}" alt="Original frame">
+                            <p class="small"><strong>Residual</strong></p>
+                            <img src="{{ item.residual }}" alt="Residual image">
+                            <p class="small"><strong>FFT</strong></p>
+                            <img src="{{ item.fft }}" alt="FFT image">
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endif %}
+</html>
